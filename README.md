@@ -1,6 +1,12 @@
 # gozbx-sender
 go版本zabbix-sender简单实现
 
+# Build 
+```shell
+   go build gozbx-sender.go
+```
+
+# Useage
 ```shell
 gozbx-sender  version: gozbx-sender /1.0.0
 Usage: gozbx-sender  [-server=server] [-endpoint=host] [-key=key] [-value=value]
