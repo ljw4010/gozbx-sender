@@ -1,6 +1,9 @@
 # gozbx-sender
 go版本zabbix-sender简单实现
 
+# 介绍
+参看博客：https://www.ljw4010.top/blog/post/ljw4010/32d0143757cf
+
 # Build 
 ```shell
    go build gozbx-sender.go
