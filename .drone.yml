@@ -10,3 +10,6 @@ steps:
   - go mod init main
   - go mod tidy
   - go build
+trigger:
+  branch:
+  - test1
