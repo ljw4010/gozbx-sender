@@ -1,3 +1,4 @@
 FROM golang:1.19.2
 ADD main /
-CMD chmod +x /main & ./main
+FROM openjdk
+CMD chmod +x /main & java --version
