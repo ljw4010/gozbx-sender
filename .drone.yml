@@ -10,6 +10,16 @@ steps:
   - go mod init main
   - go mod tidy
   - go build
+steps:
+- name: docker  
+  image: plugins/docker
+  settings:
+    repo: ljw4010/ljw4010
+    auto_tag: true
+    username: 
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
 trigger:
   branch:
   - test1
