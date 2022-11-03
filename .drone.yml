@@ -6,6 +6,7 @@ name: default
 steps:
 - name: go-build
   image: golang:1.19.2
+  pull: if-not-exists  
   commands:
   - go mod init main
   - go mod tidy
