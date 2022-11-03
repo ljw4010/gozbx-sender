@@ -1,4 +1,5 @@
 FROM golang:1.19.2
-ADD main /
 FROM openjdk
-CMD chmod +x /main & java --version
+
+ADD main /bin/
+CMD chmod +x /bin/main && java --version
