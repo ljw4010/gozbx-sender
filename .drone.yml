@@ -11,8 +11,9 @@ steps:
   - go mod tidy
   - go build
 steps:
-- name: go-publish  
+- name: go-publish
   image: plugins/docker
+  pull: if-not-exists
   settings:
     repo: ljw4010/ljw4010
     tags: latest
