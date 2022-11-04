@@ -22,7 +22,6 @@
 #      from_secret: docker_username
 #    password:
 #      from_secret: docker_password
-      
 ---
 kind: pipeline
 type: exec
@@ -37,7 +36,3 @@ steps:
 trigger:
   branch:
   - test1
-  
-#volumes:
-#- name: cache
-#  temp: {}
