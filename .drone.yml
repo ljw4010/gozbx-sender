@@ -28,7 +28,7 @@ kind: pipeline
 type: exec
 name: BD
 
-steps
+steps:
 - name: BD-scan
   commands:
   - curl -s -O https://blackducksoftware.github.io/blackduck-docker-inspector/blackduck-docker-inspector.sh
