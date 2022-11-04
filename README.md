@@ -1,4 +1,6 @@
+[![Build Status](http://drone.write-only.online:1080/api/badges/ljw4010/gozbx-sender/status.svg?ref=refs/heads/test1)](http://drone.write-only.online:1080/ljw4010/gozbx-sender)
 # gozbx-sender
+
 go版本zabbix-sender简单实现
 
 # 介绍
@@ -25,5 +27,8 @@ Options:
   -value string
         metric value
 ```
+        
+        
+        
         
  

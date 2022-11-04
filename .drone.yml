@@ -1,0 +1,38 @@
+#---
+#kind: pipeline
+#type: docker
+#name: build
+#
+#steps:
+#- name: go-build
+#  image: golang:1.19.2
+#  pull: if-not-exists  
+#  commands:
+#  - go mod init main
+#  - go mod tidy
+#  - go build
+#  
+#- name: go-publish
+#  image: plugins/docker
+#  pull: if-not-exists
+#  settings:
+#    repo: ljw4010/ljw4010
+#    tags: latest
+#    username: 
+#      from_secret: docker_username
+#    password:
+#      from_secret: docker_password
+---
+kind: pipeline
+type: exec
+name: BD
+
+steps:
+- name: BD-scan
+  commands:
+  - curl -O https://blackducksoftware.github.io/blackduck-docker-inspector/blackduck-docker-inspector.sh
+  - bash blackduck-docker-inspector.sh --upload.bdio=false --docker.image=ljw4010/ljw4010
+  
+trigger:
+  branch:
+  - test1
