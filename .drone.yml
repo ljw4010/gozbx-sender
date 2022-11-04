@@ -24,7 +24,7 @@ steps:
       from_secret: docker_password
       
 - name: BD-scan
-  image: blackducksoftware/blackduck-scan
+  image: blackducksoftware/blackduck-scan:2022.10.1
   settings:
     network: host
     detect.docker.passthrough.shared.dir.path.local: /drone/src
