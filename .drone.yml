@@ -24,9 +24,15 @@ steps:
       from_secret: docker_password
 ---
 kind: pipeline
-type: docker
+type: ssh
 name: BD
-
+server:
+  host: 
+    from_secret: ssh_host
+  user: 
+    from_secret: ssh_user
+  password:
+    from_secret: ssh_password
 steps:
 - name: BD-scan
   image: openjdk
