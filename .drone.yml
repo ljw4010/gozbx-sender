@@ -31,9 +31,8 @@ steps:
 - name: BD-scan
   image: openjdk
   commands:
-  - curl -O https://blackducksoftware.github.io/blackduck-docker-inspector/blackduck-docker-inspector.sh
-  - bash blackduck-docker-inspector.sh --upload.bdio=false --docker.image=ljw4010/ljw4010
-  
+  - curl -O https://detect.synopsys.com/detect8.sh
+  - bash -x detect8.sh --blackduck.trust.cert=true --detect.project.name=test-docker  --detect.projct.version.name=imagScan --detect.project.code.location.name=test-docker_imagScan --detect.project.version.phase=RELEASED --detect.project.version.distribution=EXTERNAL --detect.tools.excluded=DETECTOR --detect.docker.image=ljw4010/ljw4010  --blackduck.offline.mode=true 
 trigger:
   branch:
   - test1
