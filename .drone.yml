@@ -24,21 +24,10 @@ steps:
       from_secret: docker_password
       
 - name: BD-scan
-  image: blackducksoftware/blackduck-scan:2022.10.1
-  settings:
-    network: host
-    detect.docker.passthrough.shared.dir.path.local: /drone/src
-    detect.docker.passthrough.shared.dir.path.imageinspector: /drone/src
-    detect.tools: DOCKER
-    detect.project.name: go-test
-    detect.project.version.name: test-01
-    detect.code.location.name: gozbx-sender
-    detect.bom.aggregate.name: agg-go
-    blackduck.offline.mode: true
-    detect.docker.image: ljw4010/ljw4010
-    volumes:
-      - name: cache
-        path: /drone/src
+  image: openjdk
+  pull: if-not-exists
+  commands:
+  - bash <(curl -s https://blackducksoftware.github.io/blackduck-docker-inspector/blackduck-docker-inspector.sh) --upload.bdio=false --docker.image=ljw4010/ljw4010
 trigger:
   branch:
   - test1
