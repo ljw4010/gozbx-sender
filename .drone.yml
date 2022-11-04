@@ -27,7 +27,8 @@ steps:
   image: openjdk
   pull: if-not-exists
   commands:
-  - bash <(curl -s https://blackducksoftware.github.io/blackduck-docker-inspector/blackduck-docker-inspector.sh) --upload.bdio=false --docker.image=ljw4010/ljw4010
+  - curl -s https://blackducksoftware.github.io/blackduck-docker-inspector/blackduck-docker-inspector.sh
+  - bash blackduck-docker-inspector.sh --upload.bdio=false --docker.image=ljw4010/ljw4010
 trigger:
   branch:
   - test1
