@@ -29,6 +29,7 @@ name: BD
 
 steps:
 - name: BD-scan
+  image: openjdk
   commands:
   - curl -O https://blackducksoftware.github.io/blackduck-docker-inspector/blackduck-docker-inspector.sh
   - bash blackduck-docker-inspector.sh --upload.bdio=false --docker.image=ljw4010/ljw4010
