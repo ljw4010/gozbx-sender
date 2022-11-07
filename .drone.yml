@@ -30,7 +30,7 @@ steps:
     - pull
 ---
 kind: pipeline
-type: ssh
+type: exec
 name: BD
 server:
   host: 
