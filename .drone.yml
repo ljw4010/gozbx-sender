@@ -11,6 +11,9 @@ steps:
   - go mod init main
   - go mod tidy
   - go build
+  when:
+    event: 
+    - pull
 
 - name: go-publish
   image: plugins/docker
@@ -22,6 +25,9 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
+  when:
+    event:
+    - pull
 ---
 kind: pipeline
 type: ssh
